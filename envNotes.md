@@ -50,3 +50,7 @@ Change to the virtualenv
 - $ source /home/william/.pyenv/versions/flaskEnv/bin/activate
 	- Get the `(flaskEnv) william@ubuntu:~/Desktop/StockServer$`
 
+
+### uwsgi
+
+- (venv) $ pip install uwsgi
