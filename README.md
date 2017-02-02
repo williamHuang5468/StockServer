@@ -11,7 +11,7 @@
 - virtualenv
 - Flask
 
-## Todo
+## Todo - Install Env
 
 - [x] Install Git
 - [x] Install pyenv
@@ -24,10 +24,12 @@
 	- $ uwsgi config.ini
 - [x] nginx
 	- [x] Setting
-	- [ ] Issue : Can't restart
-- [ ] Supervisor
+	- [x] Issue : Can't restart
+		- The `/etc/nginx/site.../default` has some problem
+		- example: add symbol on end `;`
+- [x] Supervisor
 	- [x] Setting
-	- [ ] work unknow
+	- [x] work unknow
 
 ## Using Command 
 

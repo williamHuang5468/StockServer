@@ -54,3 +54,26 @@ Change to the virtualenv
 ### uwsgi
 
 - (venv) $ pip install uwsgi
+
+## Summary command
+
+run uwsgi
+
+	$ uwsgi config.ini # on the project folder
+
+run supervisor
+
+	$ sudo service supervisor start
+
+run nginx
+
+	$ sudo service nginx restart
+
+## Setting
+
+- uwsgi
+	- `project`/config.ini
+- nginx
+	- /etc/nginx/sites-available/default
+- supervisor
+	- /etc/supervisor/supervisor.conf/*.conf
