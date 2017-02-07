@@ -23,8 +23,7 @@
 	- [x] Setting
 	- $ uwsgi config.ini
 - [x] nginx
-	- [x] Setting
-	- [x] Issue : Can't restart
+	- [x] Setting - [x] Issue : Can't restart
 		- The `/etc/nginx/site.../default` has some problem
 		- example: add symbol on end `;`
 - [x] Supervisor
@@ -42,4 +41,5 @@ run uwsgi:
 	$ uwsgi config.ini
 
 on Browser : `127.0.0.1:9191`
+
 
