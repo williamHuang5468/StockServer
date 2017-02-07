@@ -51,9 +51,11 @@ Change to the virtualenv
 	- Get the `(flaskEnv) william@ubuntu:~/Desktop/StockServer$`
 
 
-### uwsgi
+### Install
 
 - (venv) $ pip install uwsgi
+- $ sudo apt-get install supervisor
+- $ sudo apt-get install nginx
 
 ## Summary command
 
@@ -76,4 +78,4 @@ run nginx
 - nginx
 	- /etc/nginx/sites-available/default
 - supervisor
-	- /etc/supervisor/supervisor.conf/*.conf
+	- /etc/supervisor/conf.d/*.conf
