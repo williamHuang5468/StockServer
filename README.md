@@ -29,6 +29,19 @@
 - [x] Supervisor
 	- [x] Setting
 	- [x] work unknow
+- [ ] 登入
+    - 去 SQL 找使用者
+    - Session
+- [ ] 註冊
+    - 去 SQL 新增使用者
+- [ ] 登出
+    - 清 Session
+- [ ] SQL
+    - 建立表格
+        - User 
+            - Username
+            - Password
+            - Salt
 
 ## Using Command 
 
@@ -42,4 +55,6 @@ run uwsgi:
 
 on Browser : `127.0.0.1:9191`
 
+## Feature
 
+- 亂數加料雜湊加密法
