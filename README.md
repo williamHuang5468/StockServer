@@ -31,18 +31,26 @@
 	- [x] work unknow
 - [ ] 登入
     - 去 SQL 找使用者
+	- [ ] has user
+	- [ ] has not user
     - Session
 - [ ] 註冊
     - 去 SQL 新增使用者
+	- [ ] check_user_exist
+	- [ ] create_user
 - [ ] 登出
     - 清 Session
 - [ ] SQL
     - [x] [Install PostgreSQL](https://www.fullstackpython.com/blog/postgresql-python-3-psycopg2-ubuntu-1604.html)
+    - [x] [Psycopg](http://initd.org/psycopg/docs/index.html)
     - [x] 建立表格
         - User 
             - Username
             - Password
             - Salt
+    - [x] create
+            - [x] user
+            - [x] table
 - send data by json
 
 ## Using Command 
@@ -60,3 +68,5 @@ on Browser : `127.0.0.1:9191`
 ## Feature
 
 - 亂數加料雜湊加密法
+
+

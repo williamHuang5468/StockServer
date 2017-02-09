@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, render_template
-from forms import LoginForm
-from forms import RegistrationForm
+import uuid
+import hashlib
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -34,6 +34,15 @@ def logout(username):
 	    'status' :'logout'
 	}
     return jsonify(d)
+
+def create_salt():
+    return uuid.uuid4().hex
+
+def hash(word, salt):
+    return (hashlib.md5((word + salt).encode()).hexdigest())
+
+def check(hash_password, user_password, salt):
+    return hash_password == md5(user_password + salt)
 
 if __name__ == '__main__':
     app.run()
