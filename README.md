@@ -37,11 +37,13 @@
 - [ ] 登出
     - 清 Session
 - [ ] SQL
-    - 建立表格
+    - [x] [Install PostgreSQL](https://www.fullstackpython.com/blog/postgresql-python-3-psycopg2-ubuntu-1604.html)
+    - [x] 建立表格
         - User 
             - Username
             - Password
             - Salt
+- send data by json
 
 ## Using Command 
 
