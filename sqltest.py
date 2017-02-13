@@ -25,6 +25,7 @@ def create_table():
         conn = connect()
         cursor = conn.cursor()
 
+	# user id PRMIARY KEY, username unike
         cursor.execute("CREATE TABLE useraccount (username char(40) PRIMARY KEY, password char(32), salt char(32));")
 
         conn.commit()

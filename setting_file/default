@@ -12,15 +12,15 @@
 ##
 
 server {
-	sten 80; 
+	listen 80; 
 	server_name _;
 	location / { 
 		include uwsgi_params;
 		uwsgi_pass 127.0.0.1:8001;
-		uwsgi_param UWSGI_PYHOME /home/william/.pyenv/versions/3.5.2/envs;
-		uwsgi_param UWSGI_CHDIR /home/william/.pyenv/versions/flaskEnv;
+		uwsgi_param UWSGI_PYHOME /home/william/Desktop/StockServer/venv;
+		uwsgi_param UWSGI_CHDIR /home/william/Desktop/StockServer;
 		uwsgi_param UWSGI_SCRIPT manage:app;
-		uwsgi_read_timeout 100; 
+	}
 }
 
 # Default server configuration
