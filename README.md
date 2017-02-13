@@ -1,5 +1,13 @@
 # StockServer
 
+## Use it
+
+	1. $ source venv/bin/activate
+
+	2. $ python manage.py
+	
+	3. $ uwsgi --socket 127.0.0.1:8080 --protocol=http -w manage:app
+
 ## Env
 
 - Ubuntu 16
@@ -59,14 +67,16 @@ Install package:
 
 	$ pip install -r requirements.txt
 
+
 run uwsgi:
 
-	$ uwsgi config.ini
+	$ uwsgi --socket 127.0.0.1:8080 --protocol=http -w manage:app
+
+
+	> not to use it "$ uwsgi config.ini" # it can't work
 
 on Browser : `127.0.0.1:9191`
 
 ## Feature
 
 - 亂數加料雜湊加密法
-
-

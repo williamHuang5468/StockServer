@@ -1,3 +1,4 @@
-from stockserver import app
+from stockserver import app, views
 
-app.run()
+if __name__ == '__main__':
+    app.run()
