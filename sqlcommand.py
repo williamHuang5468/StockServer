@@ -1,38 +1,25 @@
 import psycopg2
 
-# try:
-#     connect_str = "dbname=stockDb user=william host=localhost " + \
-#                   "password=wflu"
-#     conn = psycopg2.connect(connect_str)
-#     cursor = conn.cursor()
-#     cursor.execute("""CREATE TABLE useraccount (username char(40) PRIMARY KEY, password char(40), salt char(40));""")
-#     cursor.execute("INSERT INTO useraccount (username, password, salt) VALUES (%s, %s, %s)", ("Ann", "hello", "asdfjlkj"))
-#     cursor.execute("""SELECT * from useraccount""")
-#     rows = cursor.fetchall()
-#     print(rows)
-# 
-#     conn.commit()
-#     cursor.close()
-#     conn.close()
-# except Exception as e:
-#     print("Uh oh, can't connect. Invalid dbname, user or password?")
-#     print(e)
-#     cursor.close()
-#     conn.close()
-
 def create_table():
     try:
         conn = connect()
         cursor = conn.cursor()
 
 	# user id PRMIARY KEY, username unike
-        cursor.execute("CREATE TABLE useraccount (username char(40) PRIMARY KEY, password char(32), salt char(32));")
+        create_command = "\
+            create table useraccount ( \
+                user_id SERIAL PRIMARY KEY, \
+                username char(40) UNIQUE NOT NULL, \
+                password char(32) NOT NULL, \
+                salt char(32) NOT NULL \
+            ); \
+        "
+        cursor.execute(create_command)
 
         conn.commit()
         cursor.close()
         conn.close()
     except Exception as e:
-        print("Uh oh, can't connect. Invalid dbname, user or password?")
         print(e)
         cursor.close()
         conn.close()
@@ -48,7 +35,6 @@ def drop(db):
         cursor.close()
         conn.close()
     except Exception as e:
-        print("Uh oh, can't connect. Invalid dbname, user or password?")
         print(e)
         cursor.close()
         conn.close()
@@ -68,7 +54,23 @@ def create_user(username, password, salt):
         cursor.close()
         conn.close()
     except Exception as e:
-        print("Uh oh, can't connect. Invalid dbname, user or password?")
+        print(e)
+        cursor.close()
+        conn.close()
+
+
+def read():
+    try:
+        conn = connect()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT * from useraccount;")
+        row = cursor.fetchall()
+        print(row)
+        cursor.close()
+        conn.close()
+        return row
+    except Exception as e:
         print(e)
         cursor.close()
         conn.close()
@@ -77,26 +79,21 @@ def filter(username):
     try:
         conn = connect()
         cursor = conn.cursor()
-
-        cursor.execute("SELECT password, salt from useraccount where username=%s", (username))
+        command = "SELECT password, salt from useraccount where username='{0}'".format(username)
+        cursor.execute(command)
+        print(command)
         row = cursor.fetchone()
         print(row)
         cursor.close()
         conn.close()
         return row
     except Exception as e:
-        print("Uh oh, can't connect. Invalid dbname, user or password?")
         print(e)
         cursor.close()
         conn.close()
-
 
 def connect():
     connect_str = "dbname=stockDb user=william host=localhost " + \
                   "password=wflu"
     conn = psycopg2.connect(connect_str)
     return conn
-
-p, s = filter("a")
-print(p, s)
-print(p.strip() == "123")
