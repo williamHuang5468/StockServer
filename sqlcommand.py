@@ -24,12 +24,12 @@ def create_table():
         cursor.close()
         conn.close()
 
-def drop(db):
+def drop(table):
     try:
         conn = connect()
         cursor = conn.cursor()
 
-        cursor.execute("Drop Table " + db + "")
+        cursor.execute("Drop Table " + table + "")
 
         conn.commit()
         cursor.close()
@@ -75,7 +75,7 @@ def read():
         cursor.close()
         conn.close()
 
-def filter(username):
+def get_password_and_salt(username):
     try:
         conn = connect()
         cursor = conn.cursor()

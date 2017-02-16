@@ -5,7 +5,7 @@
 	1. $ source venv/bin/activate
 
 	2. $ python manage.py
-	
+
 	3. $ uwsgi --socket 127.0.0.1:8080 --protocol=http -w manage:app
 
 ## Env
@@ -37,22 +37,22 @@
 - [x] Supervisor
 	- [x] Setting
 	- [x] work unknow
-- [ ] 登入
+- [x] 登入
     - 去 SQL 找使用者
-	- [ ] has user
-	- [ ] has not user
+	- [x] has user
+	- [x] has not user
     - Session
-- [ ] 註冊
+- [x] 註冊
     - 去 SQL 新增使用者
-	- [ ] check_user_exist
-	- [ ] create_user
-- [ ] 登出
+	- [x] check_user_exist
+	- [x] create_user
+- [x] 登出
     - 清 Session
-- [ ] SQL
+- [x] SQL
     - [x] [Install PostgreSQL](https://www.fullstackpython.com/blog/postgresql-python-3-psycopg2-ubuntu-1604.html)
     - [x] [Psycopg](http://initd.org/psycopg/docs/index.html)
     - [x] 建立表格
-        - User 
+        - User
             - Username
             - Password
             - Salt
@@ -61,7 +61,17 @@
             - [x] table
 - send data by json
 
-## Using Command 
+## Millstone
+
+- [x] Function
+	- [x] Login
+	- [x] Logout
+	- [x] Register
+- [x] SQL
+	- table
+	- command
+
+## Using Command
 
 Install package:
 

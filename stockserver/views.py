@@ -39,16 +39,19 @@ def api_register():
     }
     return jsonify(message)
 
+# Check is login
+
+
+
 @app.route('/api/login', methods=['POST'])
 def api_login():
     username = request.form['username']
     hash_password, salt = sql.filter(username)
     password = request.form['password']
 
-    session['username'] = username
-
     if check(hash_password, password, salt):
         status = True
+        session['username'] = username
     else:
         status = False
 
